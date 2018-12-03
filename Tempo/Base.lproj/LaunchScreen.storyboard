@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,16 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_termo" translatesAutoresizingMaskIntoConstraints="NO" id="wiz-OE-f2h">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_termo" translatesAutoresizingMaskIntoConstraints="NO" id="wiz-OE-f2h">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wiz-OE-f2h" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="F0M-rO-jVU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wiz-OE-f2h" secondAttribute="trailing" id="HDq-Yk-dAJ"/>
-                            <constraint firstItem="wiz-OE-f2h" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="KT4-Ok-h5G"/>
-                            <constraint firstItem="wiz-OE-f2h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tvp-8A-uoA"/>
+                            <constraint firstItem="wiz-OE-f2h" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AZB-ac-aAD"/>
+                            <constraint firstItem="wiz-OE-f2h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="X3R-bM-Aec"/>
+                            <constraint firstItem="wiz-OE-f2h" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cE4-ve-KLI"/>
+                            <constraint firstItem="wiz-OE-f2h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dae-qM-oCM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo_termo" width="256" height="256"/>
+        <image name="logo_termo" width="512" height="512"/>
     </resources>
 </document>

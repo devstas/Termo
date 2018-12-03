@@ -20,8 +20,6 @@ public class NarodMonAPI {
     var dataSensorsOnDevice: NMSensorsOnDevice?
     static var dataSensorsNearby: NMSensorsNearby!
     
-    var delegateCloser: ((Any)->())?
-    
     public init() {
         if let uuid = UserDefaults.standard.string(forKey: uuidKeyForUserDefaults) {
             UUIDString = uuid
@@ -33,12 +31,13 @@ public class NarodMonAPI {
         }
     }
     
-    func addDataToHeader(request: inout URLRequest) {
+    private func addDataToHeader(request: inout URLRequest) {
         request.httpMethod = "GET"
         request.addValue("User-Agent", forHTTPHeaderField: "iosTemp")
     }
 
     // MARK: - API Metods
+    ///проверка актуальности версии приложения при первом запуске и раз в сутки, проверка авторизации пользователя.
     func appInit(complation: @escaping (Any)->()) {
         let url = baseUrl + "/appInit"
         let osVersion = ProcessInfo().operatingSystemVersion
@@ -62,13 +61,13 @@ public class NarodMonAPI {
         
         var urlRequest = Network.shared.getUrlRequest(url: url, parameters: requestParam)
         addDataToHeader(request: &urlRequest)
- print(urlRequest)
+ //print(urlRequest)
         Network.shared.getData(urlRequest: urlRequest, decodeFunc: decodeAppInit) { (data) in
             complation((data as? AppInit)!)
         }
     }
     
-
+    ///авторизация пользователя в проекте и его регистрация
     func userLogon(complation: @escaping (NMLogins)->()) {
         let url = baseUrl + "/userLogon"
         let requestParam: [String: String] = [
@@ -97,14 +96,15 @@ print(urlRequest)
     ///запрос списка ближайших к пользователю датчиков
     func sensorsNearby(location: (Double, Double)?, complation: @escaping (NMSensorsNearby)->()) {
         let url = baseUrl + "/sensorsNearby"
+        print("[ApiNarodMon]:  start UpdateData ...")
         let requestParam: [String: String] = [
             //"cmd"      : "sensorsNearby",
             "uuid"     : UUIDinMD5!,
             "api_key"  : apiKey,
-            "lat"      : String(location!.1),
-            "lng"      : String(location!.0),
+            "lat"      : String(location!.0),
+            "lng"      : String(location!.1),
             //"addr"     : "Москва",  //опционально адрес/город местонахождения пользователя, его приоритет выше чем у lat,lng;
-            "radius"   : "100",    //опционально макс удаление от пользователя до датчиков в км, максимум ~111км (1°);
+            "radius"   : "100",  //опционально макс удаление от пользователя до датчиков в км, максимум ~111км (1°);
             //"limit"    : 7,    //опционально макс кол-во ближайших публичных устр-в мониторинга, по умолчанию 20, максимум 50;
             "lang"     : "ru"]
         
@@ -122,7 +122,7 @@ print(urlRequest)
     }
 
 
-    // auxiliary method
+    // MD5 hash method
     private func MD5(_ string: String) -> String {
         let length = Int(CC_MD5_DIGEST_LENGTH)
         var digest = [UInt8](repeating: 0, count: length)

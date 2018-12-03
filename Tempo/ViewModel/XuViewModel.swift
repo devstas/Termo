@@ -13,24 +13,26 @@ class XuViewModel {
     
     var xu = XuAPI()
     
-    // viewModel
-    private var xuCellViewModelArray = [XuCellViewModel]()
-    private var xuCurrentTempViewModel: XuCurrent!
+//    required init(weatherManager: XuAPI) {
+//        self.xu = weatherManager
+//    }
     
+    // viewModels
+    private var xuCellViewModelArray = [XuCellViewModel]()
+    private var xuHeaderViewModel: XuHeaderViewModel!
+
     func updateWeather(completion: @escaping (XuHeaderViewModel) -> Void ) {
         
-        guard let coordinate = LocationManager.shered.getCoordinateString() else {return}
-        xu.location = coordinate
+        xu.getWeather(location: LocationManager.shered.getCoordinateString()) { (xuWeather) in
         
-        xu.getWeather { (xuWeather) in
-
+        self.xuCellViewModelArray.removeAll()
             if let forecastday = xuWeather.forecast?.forecastday {
                 self.xuCellViewModelArray = forecastday.map { XuCellViewModel($0) }
             }
             
-            let xuHeaderViewModel = XuHeaderViewModel(xuCurrent: xuWeather.current!)
-            xuHeaderViewModel.city = xuWeather.location?.name
-            completion(xuHeaderViewModel)
+            self.xuHeaderViewModel = XuHeaderViewModel(xuCurrent: xuWeather.current!)
+            self.xuHeaderViewModel.city = xuWeather.location?.name
+            completion(self.xuHeaderViewModel)
         }
     }
     
@@ -38,7 +40,8 @@ class XuViewModel {
         return xuCellViewModelArray.count
     }
     
-    func getXuCellViewModel(index: Int) -> XuCellViewModel {
+    func getXuCellViewModel(index: Int) -> XuCellViewModel? {
+        guard index < xuCellViewModelArray.count else { return nil }
         return xuCellViewModelArray[index]
     }
     

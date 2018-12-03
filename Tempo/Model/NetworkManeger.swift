@@ -9,9 +9,6 @@
 import Foundation
 import UIKit
 
-protocol NetworkAPI {
-    
-}
 
 class Network {
     
@@ -37,7 +34,7 @@ class Network {
     }
     
     
-    // MAKR: - helper methods
+    // MAKR: helper methods
     func getUrlRequest(url: String, parameters: [String: String]) -> URLRequest {
         var components = URLComponents(string: url)!
         components.queryItems = parameters.map { (key, value) in

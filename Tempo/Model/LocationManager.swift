@@ -9,24 +9,27 @@
 import Foundation
 import CoreLocation
 
-// TODO: Опредилится когда вызывать геолакацию
-
 class LocationManager: NSObject, CLLocationManagerDelegate {
 
     static let shered = LocationManager()
     
-    override init() {
+    private var timer: Timer!
+    
+    private override init() {
         super.init()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled() {
             locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-            locationManager.requestLocation()  //получаем координаты
+            locationManager.requestLocation()  //get coordinate
+        
+            timer = Timer.scheduledTimer(timeInterval: 600, target: self, selector: #selector(refreshTimerLocate(_:)), userInfo: nil, repeats: true)
         }
     }
     
-    deinit {
-        print("[LocationManager]:  <- deinit")
+    // reload location and weather every 600 seconds (10 min)
+    @objc func refreshTimerLocate(_ :Any) {
+        locationManager.requestLocation()
     }
     
     let locationManager = CLLocationManager()
@@ -36,23 +39,9 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         locationManager.requestLocation()
     }
     
-    func getLocation() -> CLLocation? {
-        return locationManager.location
-    }
-
-    func getCoordinate() -> CLLocationCoordinate2D? {
-        //guard locationManager.location != nil else {return nil}
-        return locationManager.location?.coordinate
-    }
-    
-    func getLongitudeLatitude() -> (CLLocationDegrees, CLLocationDegrees)? {
-        guard locationManager.location != nil else {return nil}
-        return (locationManager.location!.coordinate.longitude, locationManager.location!.coordinate.latitude)
-    }
-    
     func getCoordinateDoubl() -> (Double, Double)? {
         guard let location = locationManager.location?.coordinate else {return nil}
-        return (Double(location.longitude), Double(location.latitude))
+        return (Double(location.latitude), Double(location.longitude))
     }
     
     func getCoordinateString() -> String? {

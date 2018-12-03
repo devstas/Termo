@@ -12,13 +12,14 @@
 		808B128521A8814800767A5C /* NmCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808B128421A8814800767A5C /* NmCellViewModel.swift */; };
 		809E515A21A84CD6008555BF /* XuCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809E515921A84CD6008555BF /* XuCellViewModel.swift */; };
 		809E515C21A85A21008555BF /* XuHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809E515B21A85A21008555BF /* XuHeaderViewModel.swift */; };
+		80B7E67621AF9DDA008585BD /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7E67521AF9DDA008585BD /* MapViewModel.swift */; };
 		F708F5A52181F6BE00757EEF /* JSONApixu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F708F5A42181F6BE00757EEF /* JSONApixu.swift */; };
 		F708F5A82181FC1D00757EEF /* NetworkManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F708F5A72181FC1D00757EEF /* NetworkManeger.swift */; };
 		F708F5AA2181FF1F00757EEF /* XuAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F708F5A92181FF1F00757EEF /* XuAPI.swift */; };
-		F70B4D65218289E300411412 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B4D64218289E300411412 /* TableView.swift */; };
+		F70B4D65218289E300411412 /* XuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B4D64218289E300411412 /* XuTableView.swift */; };
 		F710025921064DE1005C1A11 /* Extansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F710025821064DE1005C1A11 /* Extansion.swift */; };
 		F73CA62821006FF60091EFB9 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73CA62721006FF60091EFB9 /* LocationManager.swift */; };
-		F740004021823498007B0429 /* TempTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F740003F21823498007B0429 /* TempTableViewCell.swift */; };
+		F740004021823498007B0429 /* XuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F740003F21823498007B0429 /* XuTableViewCell.swift */; };
 		F752D6FD20AA3D4000E3E1DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752D6FC20AA3D4000E3E1DB /* AppDelegate.swift */; };
 		F752D70220AA3D4000E3E1DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F752D70020AA3D4000E3E1DB /* Main.storyboard */; };
 		F752D70520AA3D4000E3E1DB /* Tempo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F752D70320AA3D4000E3E1DB /* Tempo.xcdatamodeld */; };
@@ -26,12 +27,12 @@
 		F752D70A20AA3D4000E3E1DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F752D70820AA3D4000E3E1DB /* LaunchScreen.storyboard */; };
 		F752D71520AA3D4000E3E1DB /* TempoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752D71420AA3D4000E3E1DB /* TempoTests.swift */; };
 		F752D72020AA3D4000E3E1DB /* TempoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752D71F20AA3D4000E3E1DB /* TempoUITests.swift */; };
-		F752D73120AA445400E3E1DB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752D73020AA445400E3E1DB /* MapViewController.swift */; };
+		F752D73120AA445400E3E1DB /* NmMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752D73020AA445400E3E1DB /* NmMapViewController.swift */; };
 		F752D73420AA459900E3E1DB /* NmAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752D73320AA459900E3E1DB /* NmAPI.swift */; };
-		F765B67D210244D000031576 /* NarodMonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F765B67C210244D000031576 /* NarodMonViewCell.swift */; };
+		F765B67D210244D000031576 /* NmViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F765B67C210244D000031576 /* NmViewCell.swift */; };
 		F76D42EE20FF3DC500D78A21 /* JSONNarodMon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76D42ED20FF3DC500D78A21 /* JSONNarodMon.swift */; };
-		F76D42F020FF9FC300D78A21 /* SensorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76D42EF20FF9FC300D78A21 /* SensorsViewController.swift */; };
-		F79559122180E5980017F0F3 /* TempTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79559112180E5980017F0F3 /* TempTableViewController.swift */; };
+		F76D42F020FF9FC300D78A21 /* NmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76D42EF20FF9FC300D78A21 /* NmViewController.swift */; };
+		F79559122180E5980017F0F3 /* XuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79559112180E5980017F0F3 /* XuTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,13 +58,14 @@
 		808B128421A8814800767A5C /* NmCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NmCellViewModel.swift; sourceTree = "<group>"; };
 		809E515921A84CD6008555BF /* XuCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XuCellViewModel.swift; sourceTree = "<group>"; };
 		809E515B21A85A21008555BF /* XuHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XuHeaderViewModel.swift; sourceTree = "<group>"; };
+		80B7E67521AF9DDA008585BD /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		F708F5A42181F6BE00757EEF /* JSONApixu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONApixu.swift; sourceTree = "<group>"; };
 		F708F5A72181FC1D00757EEF /* NetworkManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManeger.swift; sourceTree = "<group>"; };
 		F708F5A92181FF1F00757EEF /* XuAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XuAPI.swift; sourceTree = "<group>"; };
-		F70B4D64218289E300411412 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		F70B4D64218289E300411412 /* XuTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XuTableView.swift; sourceTree = "<group>"; };
 		F710025821064DE1005C1A11 /* Extansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extansion.swift; sourceTree = "<group>"; };
 		F73CA62721006FF60091EFB9 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		F740003F21823498007B0429 /* TempTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempTableViewCell.swift; sourceTree = "<group>"; };
+		F740003F21823498007B0429 /* XuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XuTableViewCell.swift; sourceTree = "<group>"; };
 		F752D6F920AA3D4000E3E1DB /* Tempo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tempo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F752D6FC20AA3D4000E3E1DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F752D70120AA3D4000E3E1DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,12 +79,12 @@
 		F752D71B20AA3D4000E3E1DB /* TempoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TempoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F752D71F20AA3D4000E3E1DB /* TempoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoUITests.swift; sourceTree = "<group>"; };
 		F752D72120AA3D4000E3E1DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F752D73020AA445400E3E1DB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		F752D73020AA445400E3E1DB /* NmMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NmMapViewController.swift; sourceTree = "<group>"; };
 		F752D73320AA459900E3E1DB /* NmAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NmAPI.swift; sourceTree = "<group>"; };
-		F765B67C210244D000031576 /* NarodMonViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarodMonViewCell.swift; sourceTree = "<group>"; };
+		F765B67C210244D000031576 /* NmViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NmViewCell.swift; sourceTree = "<group>"; };
 		F76D42ED20FF3DC500D78A21 /* JSONNarodMon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNarodMon.swift; sourceTree = "<group>"; };
-		F76D42EF20FF9FC300D78A21 /* SensorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsViewController.swift; sourceTree = "<group>"; };
-		F79559112180E5980017F0F3 /* TempTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempTableViewController.swift; sourceTree = "<group>"; };
+		F76D42EF20FF9FC300D78A21 /* NmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NmViewController.swift; sourceTree = "<group>"; };
+		F79559112180E5980017F0F3 /* XuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XuTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				809E515921A84CD6008555BF /* XuCellViewModel.swift */,
 				808B128221A871A900767A5C /* NmViewModel.swift */,
 				808B128421A8814800767A5C /* NmCellViewModel.swift */,
+				80B7E67521AF9DDA008585BD /* MapViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -125,9 +128,9 @@
 		809E515D21A864E3008555BF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F70B4D64218289E300411412 /* TableView.swift */,
-				F740003F21823498007B0429 /* TempTableViewCell.swift */,
-				F765B67C210244D000031576 /* NarodMonViewCell.swift */,
+				F70B4D64218289E300411412 /* XuTableView.swift */,
+				F740003F21823498007B0429 /* XuTableViewCell.swift */,
+				F765B67C210244D000031576 /* NmViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,9 +210,9 @@
 		F752D72D20AA43BF00E3E1DB /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				F79559112180E5980017F0F3 /* TempTableViewController.swift */,
-				F76D42EF20FF9FC300D78A21 /* SensorsViewController.swift */,
-				F752D73020AA445400E3E1DB /* MapViewController.swift */,
+				F79559112180E5980017F0F3 /* XuTableViewController.swift */,
+				F76D42EF20FF9FC300D78A21 /* NmViewController.swift */,
+				F752D73020AA445400E3E1DB /* NmMapViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -372,26 +375,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F79559122180E5980017F0F3 /* TempTableViewController.swift in Sources */,
+				F79559122180E5980017F0F3 /* XuTableViewController.swift in Sources */,
 				F708F5A52181F6BE00757EEF /* JSONApixu.swift in Sources */,
 				F710025921064DE1005C1A11 /* Extansion.swift in Sources */,
 				807BA91821A7095D00F6F04D /* XuViewModel.swift in Sources */,
 				808B128321A871A900767A5C /* NmViewModel.swift in Sources */,
 				F73CA62821006FF60091EFB9 /* LocationManager.swift in Sources */,
-				F740004021823498007B0429 /* TempTableViewCell.swift in Sources */,
+				F740004021823498007B0429 /* XuTableViewCell.swift in Sources */,
 				F752D73420AA459900E3E1DB /* NmAPI.swift in Sources */,
 				F708F5A82181FC1D00757EEF /* NetworkManeger.swift in Sources */,
-				F76D42F020FF9FC300D78A21 /* SensorsViewController.swift in Sources */,
+				F76D42F020FF9FC300D78A21 /* NmViewController.swift in Sources */,
 				F708F5AA2181FF1F00757EEF /* XuAPI.swift in Sources */,
+				80B7E67621AF9DDA008585BD /* MapViewModel.swift in Sources */,
 				808B128521A8814800767A5C /* NmCellViewModel.swift in Sources */,
-				F765B67D210244D000031576 /* NarodMonViewCell.swift in Sources */,
-				F752D73120AA445400E3E1DB /* MapViewController.swift in Sources */,
+				F765B67D210244D000031576 /* NmViewCell.swift in Sources */,
+				F752D73120AA445400E3E1DB /* NmMapViewController.swift in Sources */,
 				809E515A21A84CD6008555BF /* XuCellViewModel.swift in Sources */,
 				F76D42EE20FF3DC500D78A21 /* JSONNarodMon.swift in Sources */,
 				809E515C21A85A21008555BF /* XuHeaderViewModel.swift in Sources */,
 				F752D6FD20AA3D4000E3E1DB /* AppDelegate.swift in Sources */,
 				F752D70520AA3D4000E3E1DB /* Tempo.xcdatamodeld in Sources */,
-				F70B4D65218289E300411412 /* TableView.swift in Sources */,
+				F70B4D65218289E300411412 /* XuTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

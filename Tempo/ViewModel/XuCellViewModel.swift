@@ -25,13 +25,5 @@ class XuCellViewModel {
         self.dayOfWeek = xuWeather.date_epoch!.unixDateToDayOfWeek()
         self.urlImage = URL(string: "https:\((xuWeather.day?.condition?.icon)!)")!
     }
-    
-    // now not use
-    func compassTranslete(_ data: String?) -> String {
-        let compas = ["N":"С","WNE":"СВ","E":"В","WSE":"ЮВ","S":"Ю","WSW":"ЮЗ","W":"З","WNW":"СЗ"]
-        guard let data = data else {return "--"}
-        guard let result = compas[data] else {return "--"}
-        return result
-    }
-    
+
 }

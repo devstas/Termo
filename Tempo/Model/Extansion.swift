@@ -9,18 +9,6 @@
 import Foundation
 import UIKit
 
-extension UIImageView {
-    func downloadImageFrom(link: String) {
-        self.image = nil
-        URLSession.shared.dataTask(with: URL(string: link)!) { (data, response, error) in
-            DispatchQueue.main.async {
-                guard let data = data else { return }
-                self.image = UIImage(data: data)
-            }
-            }.resume()
-    }
-}
-
 
 extension Double {
     
@@ -58,7 +46,6 @@ extension Double {
     }
     
 }
-
 
 extension Notification.Name {
     static let locationIsUpdate = Notification.Name("locationIsUpdate")

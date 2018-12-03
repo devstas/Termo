@@ -25,9 +25,9 @@ public class XuAPI {
         "days"      : "7",
         "lang"      : "ru"]
     
-    func getWeather(completion: @escaping (JSONXuWeather) -> ()) {
-        requestParam["q"] = location
-        
+    func getWeather(location: String?, completion: @escaping (JSONXuWeather) -> ()) {
+        requestParam["q"] = location!
+        print("[ApiXu]: start UpdateData ...")
         func decodeXu(data: Data) -> JSONXuWeather? {
             return try? JSONDecoder().decode(JSONXuWeather.self, from: data)
         }
