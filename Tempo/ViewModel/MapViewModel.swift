@@ -9,10 +9,6 @@
 import Foundation
 import CoreLocation
 
-//struct Sens {
-//    var title = ""
-//    var subTitel = ""
-//}
 
 struct Device {
     var title = ""

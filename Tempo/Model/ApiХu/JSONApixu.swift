@@ -1,5 +1,5 @@
 //
-//  Apixu.swift
+//  JSONApixu.swift
 //  Tempo
 //
 //  Created by Serov Stas on 25.10.18.

@@ -1,5 +1,5 @@
 //
-    //  StaticViewController.swift
+//  NmMapViewController.swift
 //  Tempo
 //
 //  Created by Serov Stas on 15.05.18.
@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+
 
 class NmMapViewController: UIViewController {
     

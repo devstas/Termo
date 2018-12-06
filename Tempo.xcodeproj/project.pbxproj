@@ -137,6 +137,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		80BF811F21B91D58007CBED1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F752D70B20AA3D4000E3E1DB /* Info.plist */,
+				F752D70620AA3D4000E3E1DB /* Assets.xcassets */,
+				F752D70320AA3D4000E3E1DB /* Tempo.xcdatamodeld */,
+				F752D70820AA3D4000E3E1DB /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		F708F5A32181E9AE00757EEF /* ApiNorodmon */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,15 +190,11 @@
 		F752D6FB20AA3D4000E3E1DB /* Tempo */ = {
 			isa = PBXGroup;
 			children = (
-				F752D70020AA3D4000E3E1DB /* Main.storyboard */,
 				F752D6FC20AA3D4000E3E1DB /* AppDelegate.swift */,
 				F752D73220AA449000E3E1DB /* Model */,
 				F765B67E210244D900031576 /* View */,
 				807BA91921A7096300F6F04D /* ViewModel */,
-				F752D70B20AA3D4000E3E1DB /* Info.plist */,
-				F752D70620AA3D4000E3E1DB /* Assets.xcassets */,
-				F752D70320AA3D4000E3E1DB /* Tempo.xcdatamodeld */,
-				F752D70820AA3D4000E3E1DB /* LaunchScreen.storyboard */,
+				80BF811F21B91D58007CBED1 /* Resources */,
 			);
 			path = Tempo;
 			sourceTree = "<group>";
@@ -235,6 +242,7 @@
 		F765B67E210244D900031576 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F752D70020AA3D4000E3E1DB /* Main.storyboard */,
 				F752D72D20AA43BF00E3E1DB /* ViewController */,
 				809E515D21A864E3008555BF /* View */,
 			);
@@ -572,7 +580,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 455TM77TC5;
-				INFOPLIST_FILE = Tempo/Info.plist;
+				INFOPLIST_FILE = Tempo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = stelz.Tempo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -589,7 +597,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 455TM77TC5;
-				INFOPLIST_FILE = Tempo/Info.plist;
+				INFOPLIST_FILE = Tempo/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = stelz.Tempo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

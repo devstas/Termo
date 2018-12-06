@@ -1,5 +1,5 @@
 //
-//  TempTableViewController.swift
+//  XuTableViewController.swift
 //  Tempo
 //
 //  Created by Serov Stas on 24.10.18.
@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Foundation
 
 
 class XuTableViewController: UITableViewController {

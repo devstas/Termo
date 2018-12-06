@@ -1,5 +1,5 @@
 //
-//  allTempViewController.swift
+//  NmViewController.swift
 //  Tempo
 //
 //  Created by Serov Stas on 18.07.18.
@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+
 
 class NmViewController: UITableViewController {
     

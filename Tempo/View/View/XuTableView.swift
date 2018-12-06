@@ -1,5 +1,5 @@
 //
-//  TableView.swift
+//  XuTableView.swift
 //  Tempo
 //
 //  Created by Serov Stas on 26.10.18.
