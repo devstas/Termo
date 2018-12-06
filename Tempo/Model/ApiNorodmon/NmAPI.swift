@@ -15,11 +15,7 @@ public class NarodMonAPI {
     
     private var UUIDinMD5: String?
     private var UUIDString: String
-    //private var Login: String?
-    
-    var dataSensorsOnDevice: NMSensorsOnDevice?
-    static var dataSensorsNearby: NMSensorsNearby!
-    
+
     public init() {
         if let uuid = UserDefaults.standard.string(forKey: uuidKeyForUserDefaults) {
             UUIDString = uuid
@@ -38,11 +34,10 @@ public class NarodMonAPI {
 
     // MARK: - API Metods
     ///проверка актуальности версии приложения при первом запуске и раз в сутки, проверка авторизации пользователя.
-    func appInit(complation: @escaping (Any)->()) {
+    func appInit() {
         let url = baseUrl + "/appInit"
         let osVersion = ProcessInfo().operatingSystemVersion
         let requestParam: [String: String] = [
-            //"cmd"      : "appInit",
             "uuid"     : UUIDinMD5!,
             "api_key"  : apiKey,
             "version"  : Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String,
@@ -54,58 +49,25 @@ public class NarodMonAPI {
             "utc"      : "3"]     // часовой пояс пользователя в UTC (смещение в часах)
         
         func decodeAppInit(data: Data) -> AppInit? {
-//                        let JSONData = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers )
-//                        print("[AppInt]: JSONData: \n \(JSONData!)")
             return try? JSONDecoder().decode(AppInit.self, from: data)
         }
         
         var urlRequest = Network.shared.getUrlRequest(url: url, parameters: requestParam)
         addDataToHeader(request: &urlRequest)
- //print(urlRequest)
-        Network.shared.getData(urlRequest: urlRequest, decodeFunc: decodeAppInit) { (data) in
-            complation((data as? AppInit)!)
-        }
+        Network.shared.getData(urlRequest: urlRequest, decodeFunc: decodeAppInit) { (data) in /**/ }
     }
     
-    ///авторизация пользователя в проекте и его регистрация
-    func userLogon(complation: @escaping (NMLogins)->()) {
-        let url = baseUrl + "/userLogon"
-        let requestParam: [String: String] = [
-            //"cmd": "userLogon",
-            "uuid": UUIDinMD5!,
-            "api_key": apiKey,
-            "lang": "ru"]
-        
-        func decodeUserLogon(data: Data) -> NMLogins? {
-            
-//            let JSONData = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers )
-//            print("[HTTP]: JSONData: \n \(JSONData!)")
-
-            return try? JSONDecoder().decode(NMLogins.self, from: data)
-        }
-        
-        var urlRequest = Network.shared.getUrlRequest(url: url, parameters: requestParam)
-        addDataToHeader(request: &urlRequest)
-print(urlRequest)
-        Network.shared.getData(urlRequest: urlRequest, decodeFunc: decodeUserLogon) { (data) in
-            complation((data as? NMLogins)!)
-        }
-    }
-    
-
     ///запрос списка ближайших к пользователю датчиков
     func sensorsNearby(location: (Double, Double)?, complation: @escaping (NMSensorsNearby)->()) {
         let url = baseUrl + "/sensorsNearby"
-        print("[ApiNarodMon]:  start UpdateData ...")
         let requestParam: [String: String] = [
-            //"cmd"      : "sensorsNearby",
             "uuid"     : UUIDinMD5!,
             "api_key"  : apiKey,
             "lat"      : String(location!.0),
             "lng"      : String(location!.1),
-            //"addr"     : "Москва",  //опционально адрес/город местонахождения пользователя, его приоритет выше чем у lat,lng;
+            //"addr"     : "Москва",  //опционально адрес/город местонахождения пользователя
             "radius"   : "100",  //опционально макс удаление от пользователя до датчиков в км, максимум ~111км (1°);
-            //"limit"    : 7,    //опционально макс кол-во ближайших публичных устр-в мониторинга, по умолчанию 20, максимум 50;
+            //"limit"    : 7,    //опционально макс кол-во ближайших устр-в, по умолчанию 20, максимум 50;
             "lang"     : "ru"]
         
         func decodeSensorsNearby(data: Data) -> NMSensorsNearby? {

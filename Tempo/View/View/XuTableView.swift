@@ -2,13 +2,13 @@
 //  TableView.swift
 //  Tempo
 //
-//  Created by Devolper on 26.10.18.
+//  Created by Serov Stas on 26.10.18.
 //  Copyright © 2018 Devolper. All rights reserved.
 //
 
 import UIKit
 
-class TableView: UITableView {
+class XuTableView: UITableView {
     
     @IBOutlet weak var labelCurrentTemp: UILabel!
     @IBOutlet weak var labelInfo: UILabel!
@@ -37,10 +37,10 @@ class TableView: UITableView {
         }
     }
     
-    // Paralax effect
+    // TableView - paralax effect
     @IBOutlet weak var heigth: NSLayoutConstraint!
     @IBOutlet weak var bottom: NSLayoutConstraint!
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -50,7 +50,6 @@ class TableView: UITableView {
         heigth.constant = max(header.bounds.height, header.bounds.height + offsetY)
         header.clipsToBounds = offsetY <= 0
     }
-    
 }
 
 

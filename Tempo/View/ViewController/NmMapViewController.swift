@@ -2,7 +2,7 @@
     //  StaticViewController.swift
 //  Tempo
 //
-//  Created by Devolper on 15.05.18.
+//  Created by Serov Stas on 15.05.18.
 //  Copyright © 2018 Devolper. All rights reserved.
 //
 
@@ -13,16 +13,18 @@ class NmMapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    var coordinateView = (55.4507, 37.3656)
+    var coordinateView = (55.4507, 37.3656) //Moscow
     
     var viewModel: MapViewModel! {
         didSet {
-            viewModel.getDataSensor(location: coordinateView) {
-                self.mapReloadData()
+            if viewModel != nil {
+                viewModel.getDataSensor(location: coordinateView) {
+                    self.mapReloadData()
+                }
             }
-
         }
     }
+    
     @IBOutlet weak var reloadBtn: UIButton!
     
     var timer: Timer!
@@ -40,7 +42,6 @@ class NmMapViewController: UIViewController {
         }
     }
 
-    
     @objc func refreshTimer(_ :Any) {
         reloadBtn.setImage(nil, for: .normal)
         timerCounter -= 1
@@ -78,9 +79,5 @@ class NmMapViewController: UIViewController {
         }
         viewModel = MapViewModel()
     }
-}
-
-extension NmMapViewController: MKMapViewDelegate {
-
 }
 

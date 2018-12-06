@@ -2,7 +2,7 @@
 //  TempoTests.swift
 //  TempoTests
 //
-//  Created by Devolper on 15.05.18.
+//  Created by Serov Stas on 15.05.18.
 //  Copyright © 2018 Devolper. All rights reserved.
 //
 

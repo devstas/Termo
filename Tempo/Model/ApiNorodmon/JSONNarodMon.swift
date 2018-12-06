@@ -2,7 +2,7 @@
 //  JSONNarodMon.swift
 //  Tempo
 //
-//  Created by Devolper on 18.07.18.
+//  Created by Serov Stas on 18.07.18.
 //  Copyright © 2018 Devolper. All rights reserved.
 //
 

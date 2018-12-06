@@ -9,14 +9,13 @@
 import Foundation
 import CoreLocation
 
-struct Sens {
-    var title = ""
-    var subTitel = ""
-}
+//struct Sens {
+//    var title = ""
+//    var subTitel = ""
+//}
 
-struct Dev {
+struct Device {
     var title = ""
-    //var subTitel = ""
     var name: String
     var coordinate: CLLocationCoordinate2D
 }
@@ -25,19 +24,14 @@ class MapViewModel {
     
     var narodmonApi = NarodMonAPI()
     
-    // model
-    var devices: [Dev]!
-    
+    var devices: [Device]!
     
     func getDataSensor(location: (Double, Double), completion: @escaping () -> Void) {
         narodmonApi.sensorsNearby(location: location) { [weak self] (sensorsNear) in
-            //self?.nmCellViewModelArray = sensorsNear.devices.map{ NmCellViewModel(device: $0) }
             self?.updeteViewModel(devices: sensorsNear.devices)
-            //print(self.nmMapViewModel.devices)
             completion()
         }
     }
-    
     
     func updeteViewModel(devices: [NMDevices]) {
         self.devices = []
@@ -49,7 +43,7 @@ class MapViewModel {
             let title = dev.sensors.reduce("") { total, item in
                 "\(total)\n\(item.name!) = \(item.value!) \(item.unit!)"
             }
-            self.devices.append(Dev(title: title, name: name, coordinate: coordinate))
+            self.devices.append(Device(title: title, name: name, coordinate: coordinate))
         }
     }
     

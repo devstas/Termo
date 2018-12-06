@@ -16,7 +16,8 @@ class NmViewModel {
     var nmMapViewModel: MapViewModel!
     
     func getDataSensor(completion: @escaping () -> Void) {
-        narodmonApi.sensorsNearby(location: LocationManager.shered.getCoordinateDoubl()) { [weak self] (sensorsNear) in
+        guard let location = LocationManager.shered.getCoordinateDoubl() else { return }
+        narodmonApi.sensorsNearby(location: location) { [weak self] (sensorsNear) in
             self?.nmCellViewModelArray = sensorsNear.devices.map{ NmCellViewModel(device: $0) }
             completion()
         }
@@ -28,10 +29,6 @@ class NmViewModel {
     
     func getNmCountOfCell() -> Int {
         return nmCellViewModelArray.count
-    }
-    
-    func getMapViewModel() -> MapViewModel {
-        return nmMapViewModel
     }
     
 }

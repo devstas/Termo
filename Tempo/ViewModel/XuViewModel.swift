@@ -13,10 +13,6 @@ class XuViewModel {
     
     var xu = XuAPI()
     
-//    required init(weatherManager: XuAPI) {
-//        self.xu = weatherManager
-//    }
-    
     // viewModels
     private var xuCellViewModelArray = [XuCellViewModel]()
     private var xuHeaderViewModel: XuHeaderViewModel!
@@ -29,7 +25,6 @@ class XuViewModel {
             if let forecastday = xuWeather.forecast?.forecastday {
                 self.xuCellViewModelArray = forecastday.map { XuCellViewModel($0) }
             }
-            
             self.xuHeaderViewModel = XuHeaderViewModel(xuCurrent: xuWeather.current!)
             self.xuHeaderViewModel.city = xuWeather.location?.name
             completion(self.xuHeaderViewModel)

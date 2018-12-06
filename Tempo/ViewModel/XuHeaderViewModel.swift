@@ -14,12 +14,10 @@ class XuHeaderViewModel {
     var conditionInfoTemp: String
     var feelTemp: String
     var urlImageWeather: URL
-    
     var pressure: String
     var windSpeed: String
     var humidity: String
     var visibility: String
-    
     var city: String?
     
     init(xuCurrent: XuCurrent) {

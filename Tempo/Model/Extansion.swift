@@ -2,7 +2,7 @@
 //  BasicExtantion.swift
 //  Tempo
 //
-//  Created by Devolper on 23.07.18.
+//  Created by Serov Stas on 23.07.18.
 //  Copyright © 2018 Devolper. All rights reserved.
 //
 
@@ -14,7 +14,6 @@ extension Double {
     
     func unixDateToDayOfWeek() -> String {
         let dateTime = NSDate(timeIntervalSince1970: self)
-        //indexPath.row == 0 ? "Завтра" :
         let dateFormatter  = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ru_RU")
         let calendar = Calendar(identifier: .gregorian)

@@ -2,7 +2,7 @@
 //  LocationManager.swift
 //  Tempo
 //
-//  Created by Devolper on 19.07.18.
+//  Created by Serov Stas on 19.07.18.
 //  Copyright © 2018 Devolper. All rights reserved.
 //
 
@@ -33,7 +33,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     let locationManager = CLLocationManager()
-    var locationIsEmpte = false
     
     func requestLocation() {
         locationManager.requestLocation()
@@ -49,8 +48,15 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         return "\(Double(location.latitude)),\(Double(location.longitude))"
     }
     
+    func getAuthorizationStatus() -> Bool {
+        return CLLocationManager.authorizationStatus() == .authorizedWhenInUse ? true : false
+    }
     
     // MARK: - Delegate method of CLLocationManagerDelegate
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        locationManager.requestLocation()
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if manager.location != nil {
             print("[LocationManager]: координаты определены = \(getCoordinateString()!)")
@@ -59,6 +65,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("[LocationManager]: \(error)")
+        print("[LocationManager]: ошибка получения координат = \(error)")
     }
 }

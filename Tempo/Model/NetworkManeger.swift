@@ -2,7 +2,7 @@
 //  NetworkManeger.swift
 //  Tempo
 //
-//  Created by Devolper on 25.10.18.
+//  Created by Serov Stas on 25.10.18.
 //  Copyright © 2018 Devolper. All rights reserved.
 //
 

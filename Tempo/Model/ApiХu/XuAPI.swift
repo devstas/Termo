@@ -2,7 +2,7 @@
 //  XuAPI.swift
 //  Tempo
 //
-//  Created by Devolper on 25.10.18.
+//  Created by Serov Stas on 25.10.18.
 //  Copyright © 2018 Devolper. All rights reserved.
 //
 
@@ -16,7 +16,6 @@ for exemple, response: https://api.apixu.com/v1/ forecast.json? key=apiKey&q=Mos
 public class XuAPI {
 
     private let apiKey = "c2ddef88a446462ba25123242182510"
-    var location = ""
     
     private let baseUrl = "https://api.apixu.com/v1/forecast.json"
     private var requestParam = [
@@ -26,7 +25,7 @@ public class XuAPI {
         "lang"      : "ru"]
     
     func getWeather(location: String?, completion: @escaping (JSONXuWeather) -> ()) {
-        requestParam["q"] = location!
+        requestParam["q"] = location != nil ? location! : "55.4507, 37.3656"
         print("[ApiXu]: start UpdateData ...")
         func decodeXu(data: Data) -> JSONXuWeather? {
             return try? JSONDecoder().decode(JSONXuWeather.self, from: data)

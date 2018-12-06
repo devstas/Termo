@@ -17,7 +17,6 @@ class XuCellViewModel {
     var dayOfWeek: String?
     var urlImage: URL
     
-    //xuWeather = xuWeather.forecast?.forecastday
     init(_ xuWeather: XuForecastDay) {
         self.tempDay = "\(Int((xuWeather.day?.maxtemp_c)!)) ˚"
         self.tempNigth = "\(Int((xuWeather.day?.mintemp_c)!)) ˚"
