@@ -6,7 +6,6 @@
 //  Copyright © 2018 Devolper. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 

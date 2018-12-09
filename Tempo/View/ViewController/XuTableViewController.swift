@@ -65,6 +65,7 @@ class XuTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "idForecastCell", for: indexPath) as! TempTableViewCell
+        
         if viewModel != nil {
             cell.viewModel = viewModel!.getXuCellViewModel(index: indexPath.row)
         }

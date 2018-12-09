@@ -14,7 +14,7 @@ class NmMapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    var coordinateView = (55.4507, 37.3656) //Moscow
+    var coordinateView = (55.4507, 37.3656) //default - Moscow
     
     var viewModel: MapViewModel! {
         didSet {

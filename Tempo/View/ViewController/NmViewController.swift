@@ -24,7 +24,7 @@ class NmViewController: UITableViewController {
     
     //MARK: - Actions
     @IBAction func refreshData(_ sender: UIBarButtonItem) {
-        LocationManager.shered.requestLocation()
+        LocationManager.shered.requestLocationServices()
     }
     
     override func viewWillAppear(_ animated: Bool) {
