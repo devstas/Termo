@@ -8,3 +8,4 @@
 
 # implementation details
  - use Swift 4.2
+ - MVVM
