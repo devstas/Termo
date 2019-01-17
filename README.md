@@ -1,6 +1,7 @@
 # Termo
 + Weather program for temperature monitoring
 
+
 - Weather forecast
   - receives weather data from www.apixu.com
 - Data nearby sensors
